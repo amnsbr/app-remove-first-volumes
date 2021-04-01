@@ -6,10 +6,11 @@
 # 
 # This is the main file run by the brainlife.io orchestration system
 #
-# Author: Franco Pestilli
+# Author: Amin Saberi
 
 # make output directory
 mkdir -p out_dir
 
 # run the actual python code
-singularity exec docker://brainlife/dipy:1.1.1 python3 main.py
+# this docker image is simply ubuntu + nilearn and a few other python packages
+singularity exec docker://faskowit/app-fmri-2-mat:brnch-0.1.2 python3 main.py

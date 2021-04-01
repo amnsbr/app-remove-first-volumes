@@ -1,4 +1,4 @@
 {
-    "t1": "t1.nii.gz",
-    "outres": "1 1 1"
+    "fmri": "test_bold.nii.gz",
+    "n_vols": "5"
 }

@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Brainlife
+test_bold.nii.gz
+config.json
+out_dir

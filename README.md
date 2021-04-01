@@ -1,23 +1,13 @@
 [![Abcdspec-compliant](https://img.shields.io/badge/ABCD_Spec-v1.1-green.svg)](https://github.com/brain-life/abcd-spec)
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.444-blue.svg)](https://doi.org/10.25663/bl.app.444)
 
-# app-template-python
-This is a template for a python-based brainlife.io/app
+# app-remove-first-volumes
+An app to remove the first N volumes of a 4D fMRI image.
 
-# app-example-documentation
-This is an example of how to write documentation (readme.md and license.md for Apps on brainlife.io)
-
-Write the following here...
-
-1) What the App does, and how it does it at the basic level.
-2) Briefly explain what 1) means for novice users in a language that 1st year psychology student can understand it.
-3) Briefly description of input / output files.
+This app uses nilearn to remove the first N volumes of a 4D fMRI image, which is a common practice in fMRI preprocessing. The input is a fMRI image (.nii.gz) and the number of volumes to be removed, and the output is another fMRI image (.nii.gz) with the first volumes removed. Notice that this app (for now) should only be used with rs-fMRI images and be run before fmriprep, as it will disrupt the correspondence of regressors timeseries and events with the 4D image.
 
 ### Authors
-- [Franco Pestilli](pestilli@utexas.edu)
-
-### Contributors
-- [Franco Pestilli](pestilli@utexas.edu)
+- [Amin Saberi](amnsbr@gmail.com)
 
 #### Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
 
@@ -40,7 +30,7 @@ We ask that you the following articles when publishing papers that used data, co
 
 ### On Brainlife.io
 
-You can submit this App online at [https://doi.org/10.25663/bl.app.444](https://doi.org/10.25663/bl.app.444) via the "Execute" tab.
+You can submit this App online at ??? via the "Execute" tab.
 
 ### Running Locally (on your machine)
 
@@ -49,7 +39,8 @@ You can submit this App online at [https://doi.org/10.25663/bl.app.444](https://
 
 ```json
 {
-  "t1": "t1.nii.gz"
+    "fmri": "test_bold.nii.gz",
+    "n_vols": "5"
 }
 ```
 
@@ -59,20 +50,9 @@ You can submit this App online at [https://doi.org/10.25663/bl.app.444](https://
 ./main
 ```
 
-### Sample Datasets
-
-If you don't have your own input file, you can download sample datasets from Brainlife.io, or you can use [Brainlife CLI](https://github.com/brain-life/cli).
-
-```
-npm install -g brainlife
-bl login
-mkdir input
-bl dataset download 5a0f0fad2c214c9ba8624376#5a050966eec2b300611abff2 && mv 5a0f0fad2c214c9ba8624376#5a050966eec2b300611abff2 .
-```
-
 ## Output
 
-All output file (a resampled T1w NIFTI-1 file) will be generated inside the current working directory (pwd), inside a specifc directory called:
+Output file (a 4D .nii.gz file with the first volumes removed) will be generated inside the current working directory (pwd), inside a specifc directory called:
 
 ```
 out_dir
@@ -80,4 +60,4 @@ out_dir
 
 ### Dependencies
 
-This App only requires DIPY.org to run. 
+This App only requires nilearn to run. 
