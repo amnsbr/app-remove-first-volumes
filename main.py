@@ -11,7 +11,7 @@ with open('config.json') as config_json:
 	config = json.load(config_json)
 
 # Load into variables predefined code inputs
-in_filename = str(config['fmri'])
+in_filename = str(config['bold'])
  
 # Get the number of volumes to be removed
 n_vols = int(config['n_vols'])
