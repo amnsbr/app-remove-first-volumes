@@ -1,5 +1,5 @@
 [![Abcdspec-compliant](https://img.shields.io/badge/ABCD_Spec-v1.1-green.svg)](https://github.com/brain-life/abcd-spec)
-[![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.444-blue.svg)](https://doi.org/10.25663/bl.app.444)
+[![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.495-blue.svg)](https://doi.org/10.25663/brainlife.app.495)
 
 # app-remove-first-volumes
 An app to remove the first N volumes of a 4D fMRI image.
@@ -30,7 +30,7 @@ We ask that you the following articles when publishing papers that used data, co
 
 ### On Brainlife.io
 
-You can submit this App online at ??? via the "Execute" tab.
+You can submit this App online at https://doi.org/10.25663/brainlife.app.495 via the "Execute" tab.
 
 ### Running Locally (on your machine)
 
