@@ -2,6 +2,47 @@
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.495-blue.svg)](https://doi.org/10.25663/brainlife.app.495)
 
 # app-remove-first-volumes
+
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Removes the first N volumes of a 4D fMRI image with nilearn and outputs the trimmed BOLD series.**
+
+Loads the BOLD image with nilearn and drops the first n_vols volumes, a common step to discard non-steady-state volumes before fMRI preprocessing. It needs a 4D task fMRI image; only the BOLD file is used and other files of the input are not carried over.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/func/task` |
+| 📤 **Outputs** | `neuro/func/task` |
+| 🐳 **Container** | `faskowit/app-fmri-2-mat:brnch-0.1.2` |
+| ⚙️ **Resources** | 1 CPUs |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.495](https://doi.org/10.25663/brainlife.app.495) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `fmri` | `neuro/func/task` | yes | 4D BOLD fMRI image (.nii.gz). |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `out_dir` | `neuro/func/task` | BOLD image (bold.nii.gz) with the first n_vols volumes removed. |
+
+<details>
+<summary><b>⚙️ Parameters</b> (1)</summary>
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `n_vols` | number |  | Number of initial volumes to remove from the start of the BOLD series. |
+
+</details>
+
+📚 **References used by this App:**
+- Avesani P, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6:69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+
+<!-- brainlife-app:end -->
+
 An app to remove the first N volumes of a 4D fMRI image.
 
 This app uses nilearn to remove the first N volumes of a 4D fMRI image, which is a common practice in fMRI preprocessing. The input is a fMRI image (.nii.gz) and the number of volumes to be removed, and the output is another fMRI image (.nii.gz) with the first volumes removed. Notice that this app (for now) should only be used with rs-fMRI images and be run before fmriprep, as it will disrupt the correspondence of regressors timeseries and events with the 4D image.
